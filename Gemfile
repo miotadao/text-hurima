@@ -80,3 +80,7 @@ gem 'devise'
 gem 'letter_opener'
 gem 'mailcatcher'
 gem 'dotenv-rails' #.envファイルを作成するために入れたけど使わなかった
+
+
+gem 'activestorage'
+gem 'cloudinary'
