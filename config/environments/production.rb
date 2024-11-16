@@ -92,13 +92,13 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   config.action_mailer.delivery_method = :smtp
-config.action_mailer.smtp_settings = {
-  address: 'smtp.example.com', # SMTPサーバーのアドレス
-  port: 587,
-  user_name: 'your_username',
-  password: 'your_password',
-  authentication: 'plain',
-  enable_starttls_auto: true
+  config.action_mailer.smtp_settings = {
+    address: 'smtp.sendgrid.net', # SMTPサーバーのアドレス
+    port: 587,
+    user_name: 'apikey',
+    password: ENV['SENDGRID_API_KEY'],
+    authentication: 'plain',
+    enable_starttls_auto: true
 }
 
 
