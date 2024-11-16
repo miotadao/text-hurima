@@ -37,7 +37,7 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
-  database: text-hurima_production
+  database: <%= ENV['DATABASE_URL'] %>
   pool: 5
   username: postgres
   password: <%= ENV['DATABASE_PASSWORD'] %>  # 本番環境では環境変数を使う
