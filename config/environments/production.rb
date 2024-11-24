@@ -95,12 +95,12 @@ Rails.application.configure do
     config.action_mailer.delivery_method = :smtp
     config.action_mailer.perform_deliveries = true
     config.action_mailer.smtp_settings = {
-      address: 'smtp.sendgrid.net', # SMTPサーバーのアドレス
-      port: 587,
-      domain: 'sendgrid.net',
+      address: 'smtp.sendgrid.net',
       user_name: 'apikey',
       password: ENV['SENDGRID_API_KEY'],
       authentication: 'plain',
+      domain: 'herokuapp.com',
+      port: 587,
       enable_starttls_auto: true
   }
 
