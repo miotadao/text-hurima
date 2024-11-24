@@ -19,4 +19,5 @@ class NotifierMailer < ApplicationMailer
     mail(to: @receiver.email, subject: '相手からチャットのコメントが来ました。')
   end
 
+
 end
