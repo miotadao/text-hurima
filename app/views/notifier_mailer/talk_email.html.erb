@@ -5,10 +5,7 @@
     <p><%= @post.title%>を購入した方からチャットでコメントが届きました。</p>
     <p>できるだけ早く返信し商品のやり取りを完了させましょう。</p>
 
-    <%
-=begin%>
- <p><%= link_to 'この商品の詳細ページへ', post_url(@post.id, host: 'localhost', port: 3000) %></p> 
-<%
-=end%>
+    <p>ログインはこちらから: <a href="<%= @url %>"><%= @url %></a></p>
+
   </body>
 </html>
