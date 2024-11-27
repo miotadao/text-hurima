@@ -72,7 +72,6 @@ class PostsController < ApplicationController
     @post.update(bought_id: current_user.id, is_sold: true)
     seller_id = @post.user_id
     seller = User.find(seller_id)
-    NotifierMailer.item_sold_email(seller, @post).deliver_now
     redirect_to post_path(@post)
   end
 
@@ -80,7 +79,6 @@ class PostsController < ApplicationController
     @post.update(bought_id: 0, is_sold: false)
     seller_id = @post.user_id
     seller = User.find(seller_id)
-    NotifierMailer.item_cancel_email(seller, @post).deliver_now
     redirect_to post_path(@post)
   end
 

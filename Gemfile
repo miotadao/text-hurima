@@ -85,5 +85,4 @@ gem 'dotenv-rails'
 gem 'activestorage'
 gem 'cloudinary'
 gem 'rails_12factor', group: :production # Heroku 用に追加
-gem 'sendgrid-ruby', '~> 6.0' # SendGrid 用の gem
 gem 'image_processing', '~> 1.2' # ActiveStorage と Cloudinary の連携

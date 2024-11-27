@@ -11,7 +11,6 @@ class TalksController < ApplicationController
       elsif current_user.id == @post.bought_id
         receiver = User.find(@post.user_id)
       end
-      NotifierMailer.talk_email(receiver, @post).deliver_now
       redirect_to [@post]
     else
       render 'posts/show'
