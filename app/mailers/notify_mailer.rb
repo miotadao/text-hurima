@@ -1,5 +1,5 @@
 class NotifyMailer < ApplicationMailer
-  default from: 'no-reply@example.com'  # 送信元メールアドレス
+  default from: 'no-reply@text-hurima.com'  # 送信元メールアドレス
 
   # メール送信メソッド
   def buy_email(user)
