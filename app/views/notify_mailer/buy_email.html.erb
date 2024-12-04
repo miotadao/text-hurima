@@ -1,3 +1,4 @@
-<h1>Welcome to Our Application, <%= @user.name %>!</h1>
-<p>Thank you for signing up. We are excited to have you on board.</p>
-<p>Click <a href="<%= @url %>">here</a> to log in.</p>
+<p><%= @user.name %>さん、いつもテキストフリマをご利用いただきありがとうございます。</p>
+<p>おめでとうございます！出品していた「<%= @post.title %>」が購入されました。</p>
+<p>「<%= @post.title %>」の詳細ページのチャットから購入者の方と商品を受け渡しする場所や日時を相談して決めてください。</p>
+<a href="<%= @url %>"><p>サイトへ移動</p></a>

@@ -2,10 +2,24 @@ class NotifyMailer < ApplicationMailer
   default from: 'no-reply@text-hurima.com'  # 送信元メールアドレス
 
   # メール送信メソッド
-  def buy_email(user)
-    @user = user  # メール送信時に必要な情報をインスタンス変数に設定
-    @url  = 'http://example.com/login'  # 例えばログイン用のURLなど
+  def buy_email(user, post)
+    @user = user 
+    @url  = 'https://text-hurima-70a859267649.herokuapp.com/'  
+    @post = post
+    mail(to: @user.email, subject: '商品が購入されました。')  
+  end
 
-    mail(to: @user.email, subject: 'Welcome to Our Application')  # 送信先と件名を設定
+  def cancel_email(user, post)
+    @user = user 
+    @url  = 'https://text-hurima-70a859267649.herokuapp.com/'  
+    @post = post
+    mail(to: @user.email, subject: '商品がキャンセルされました。')  
+  end
+
+  def chat_email(receiver, post)
+    @receiver = receiver
+    @post = post
+    @url  = 'https://text-hurima-70a859267649.herokuapp.com/'
+    mail(to: @receiver.email, subject: '相手からチャットのコメントが来ました。')
   end
 end

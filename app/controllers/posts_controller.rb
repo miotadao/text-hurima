@@ -72,14 +72,15 @@ class PostsController < ApplicationController
     @post.update(bought_id: current_user.id, is_sold: true)
     @user_id = @post.user_id
     @seller = User.find(@user_id)
-    NotifyMailer.buy_email(@seller).deliver_later
+    NotifyMailer.buy_email(@seller, @post).deliver_later
     redirect_to post_path(@post)
   end
 
   def cancel
     @post.update(bought_id: 0, is_sold: false)
-    # seller_id = @post.user_id
-    # seller = User.find(seller_id)
+    @user_id = @post.user_id
+    @seller = User.find(@user_id)
+    NotifyMailer.cancel_email(@seller, @post).deliver_later
     redirect_to post_path(@post)
   end
 
