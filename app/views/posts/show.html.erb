@@ -69,10 +69,11 @@
             </ul>
           <% end %>
 
-          <%= form_with model: [@post, @talk], local: true, id: "chat-form-container" do |f| %>
+          <%= form_with model: [@post, @talk], local: true, id: "chat-form-container"  do |f| %>
             <%= f.text_area :body, id: "chat-form" %>
             <%= f.submit "送信", id: "chat-submit" %> 
           <% end %>
+          
         </div>
       <% end %>
     <% end %>
@@ -132,8 +133,8 @@
             </ul>
             <% end %>
 
-            <%= form_with model: [@post, @talk], local: true, id: "chat-form-container" do |f| %>
-              <%= f.text_area :body, id: "chat-form" %>
+            <%= form_with model: [@post, @talk], local: true, id: "chat-form-container-m" do |f| %>
+              <%= f.text_area :body, id: "chat-form-m" %>
               <%= f.submit "送信", id: "chat-submit" %> 
             <% end %>
           </div>
@@ -168,7 +169,7 @@
 </main>
 
 
- <script>
+<script>
 	function cancel_check() {
 		const result = window.confirm("購入をキャンセルしますか？？")
     if (!result) {
@@ -218,10 +219,32 @@
       }
       
     });
-    
-    
-    
-});
+  });
+
+
+// チャットテキスト空の時
+  const chatForm = document.getElementById('chat-form-container');
+  const chatTextArea = document.getElementById('chat-form');
+
+  chatForm.addEventListener('submit', function(e) {
+    if (chatTextArea.value.length === 0) {
+      e.preventDefault();
+      alert('コメント内のテキストが空です。');
+    }
+  });
+
+
+// スマホ
+  const chatFormMobile = document.getElementById('chat-form-container-m');
+  const chatTextAreaMobile = document.getElementById('chat-form-m');
+
+  chatFormMobile.addEventListener('submit', function(e) {
+    if (chatTextAreaMobile.value.length === 0) {
+      e.preventDefault();
+      alert('コメント内のテキストが空です。');
+    }
+  });
+  
 </script> 
 
 
