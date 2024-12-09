@@ -25,6 +25,8 @@ class TalksController < ApplicationController
     redirect_to [:post, { id: params[:post_id] }]
   end
 
+  
+
   private
 
   def talk_params

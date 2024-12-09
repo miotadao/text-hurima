@@ -77,6 +77,8 @@ class PostsController < ApplicationController
   end
 
   def cancel
+    @talks = @post.talks
+    @talks.destroy_all
     @post.update(bought_id: 0, is_sold: false)
     @user_id = @post.user_id
     @seller = User.find(@user_id)
